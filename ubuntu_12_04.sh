@@ -9,10 +9,10 @@ REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-precise.deb"
 #--------------------------------------------------------------------
 # NO TUNABLES BELOW THIS POINT
 #--------------------------------------------------------------------
-# if [ "$EUID" -ne "0" ]; then
-#  echo "This script must be run as root." >&2
-#  exit 1
-# fi
+if [ "$EUID" -ne "0" ]; then
+  echo "This script must be run as root." >&2
+  exit 1
+fi
 
 # Install the PuppetLabs repo
 echo "Configuring PuppetLabs repo..."
